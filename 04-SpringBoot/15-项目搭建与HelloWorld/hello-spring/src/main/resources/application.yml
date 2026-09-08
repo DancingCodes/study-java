@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev    # 默认激活 dev 环境
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      table-prefix: ""
+      id-type: auto
+
+# 自定义配置示例
+app:
+  name: hello-spring
+  version: 1.0.0

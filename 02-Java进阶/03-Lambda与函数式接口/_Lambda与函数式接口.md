@@ -1,6 +1,45 @@
 # Lambda 与函数式接口
 
-## 一、回顾匿名内部类
+## 一、接口、匿名内部类、Lambda 的关系
+
+实现一个接口有三种写法，做的是同一件事，只是越来越简洁（Lambda 仅限只有一个抽象方法的函数式接口）：
+
+```java
+// 接口
+public interface StringProcessor {
+    String process(String input);
+}
+```
+
+**写法一：实现类（最完整）**
+```java
+public class UpperProcessor implements StringProcessor {
+    @Override
+    public String process(String input) {
+        return input.toUpperCase();
+    }
+}
+StringProcessor sp = new UpperProcessor();
+```
+
+**写法二：匿名内部类（省了类名，不用单独建类）**
+```java
+StringProcessor sp = new StringProcessor() {
+    @Override
+    public String process(String input) {
+        return input.toUpperCase();
+    }
+};
+```
+
+**写法三：Lambda（省到只剩核心逻辑，只适用于只有一个方法的接口）**
+```java
+StringProcessor sp = s -> s.toUpperCase();
+```
+
+> 三步简化：**实现类 → 匿名内部类 → Lambda**
+
+## 二、回顾匿名内部类
 
 上一阶段写过匿名内部类：
 

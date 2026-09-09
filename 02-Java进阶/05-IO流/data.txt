@@ -1,0 +1,5 @@
+Hello Java
+IO Stream
+你好世界
+BufferedReader is useful
+Java IO is fun

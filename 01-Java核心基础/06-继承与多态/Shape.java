@@ -1,4 +1,4 @@
-// 题目 1：定义一个继承体系
+// 练习 1：定义一个继承体系
 // 父类 Shape：有 name 属性（private + getter），有 area() 方法返回 0.0
 
 public class Shape {

@@ -1,4 +1,4 @@
-// 题目 1：子类 Rectangle
+// 练习 1：子类 Rectangle
 // 增加 width 和 height 属性，重写 area() 返回长方形面积
 
 public class Rectangle extends Shape {

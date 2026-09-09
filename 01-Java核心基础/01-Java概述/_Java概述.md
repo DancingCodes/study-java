@@ -1,6 +1,6 @@
 # Java 概述
 
-## Java 的历史
+## 一、Java 的历史
 
 - **1991 年**：Sun 公司的 James Gosling 团队开始开发一种叫 "Oak"（橡树）的语言，最初是给电视机顶盒等嵌入式设备用的
 - **1995 年**：正式更名为 **Java**，发布 Java 1.0。口号是 **"Write Once, Run Anywhere"**（一次编写，到处运行）
@@ -18,7 +18,7 @@ LTS = Long-Term Support（长期支持版本）。Oracle 会为 LTS 版本提供
 
 **企业项目选版本就认 LTS**：Java 8、11、17、21。其他版本（9、10、12...）是过渡版，半年就不维护了。
 
-## Java 现在的地位
+## 二、Java 现在的地位
 
 - 连续 20 多年位居编程语言排行榜前三（TIOBE）
 - 全球约有 **900 万+** Java 开发者
@@ -33,7 +33,7 @@ LTS = Long-Term Support（长期支持版本）。Oracle 会为 LTS 版本提供
 
 简单说：**后端开发、企业级应用，Java 是绝对的主力**。
 
-## Java 为什么能跨平台？
+## 三、Java 为什么能跨平台？
 
 其他语言（如 C）编译后直接变成机器码，只能在特定操作系统上运行。
 
@@ -53,7 +53,7 @@ Java 不一样：
 - Windows 装 Windows 版的 JVM，Mac 装 Mac 版的 JVM，Linux 装 Linux 版的
 - 你的 `.class` 文件不用改，放到哪个系统都能跑 → **一次编写，到处运行**
 
-## JDK、JRE、JVM 的关系
+## 四、JDK、JRE、JVM 的关系
 
 ```
 JDK（Java Development Kit）开发工具包
@@ -69,7 +69,7 @@ JDK（Java Development Kit）开发工具包
 
 **你装 JDK 就够了**，JRE 和 JVM 都包含在里面。
 
-## JDK 安装与环境配置
+## 五、JDK 安装与环境配置
 
 ### 1. 下载 JDK
 
@@ -101,7 +101,7 @@ javac -version
 
 看到版本号就说明装好了。
 
-## 第一个程序：Hello World
+## 六、第一个程序：Hello World
 
 ```java
 public class HelloWorld {
@@ -141,11 +141,9 @@ java HelloWorld
 
 ---
 
-## 练习题
+## 练习
 
-请在 `HelloWorld.java` 中完成以下练习：
-
-### 题目 1：自我介绍
+### 练习 1：自我介绍
 写一个程序，打印出以下三行（内容换成你自己的）：
 ```
 我叫张三
@@ -153,8 +151,8 @@ java HelloWorld
 我的目标是独立开发项目
 ```
 
-### 题目 2：理解编译过程
-1. 用 `javac` 编译你的 `HelloWorld.java`
+### 练习 2：理解编译过程
+1. 用 `javac` 编译你的 `Main.java`
 2. 查看生成的 `.class` 文件
 3. 用 `java` 命令运行它
-4. 思考：如果把类名改成 `Hello`，但文件名还是 `HelloWorld.java`，编译会怎样？试一试。
+4. 思考：如果把类名改成 `Hello`，但文件名还是 `Main.java`，编译会怎样？试一试。

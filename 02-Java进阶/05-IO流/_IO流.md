@@ -1,6 +1,6 @@
 # IO 流
 
-## 什么是 IO？
+## 一、什么是 IO？
 
 IO 就是 **Input（输入）** 和 **Output（输出）**，指程序和外部之间的数据传输：
 - **输入**：从外部读数据到程序（比如读文件内容）
@@ -8,9 +8,7 @@ IO 就是 **Input（输入）** 和 **Output（输出）**，指程序和外部�
 
 > 记忆方式：站在程序的角度看，数据进来是 Input，数据出去是 Output。
 
----
-
-## 流的分类
+## 二、流的分类
 
 ### 按数据单位分
 
@@ -35,9 +33,7 @@ IO 就是 **Input（输入）** 和 **Output（输出）**，指程序和外部�
 | 节点流 | 直接连接数据源 | FileInputStream、FileWriter |
 | 处理流（包装流） | 包装节点流，增强功能 | BufferedReader、BufferedWriter |
 
----
-
-## 四大基类
+## 三、四大基类
 
 Java IO 的核心是四个抽象类：
 
@@ -49,9 +45,7 @@ Java IO 的核心是四个抽象类：
 
 所有具体的流类都继承自这四个基类。
 
----
-
-## 一、字节流
+## 四、字节流
 
 ### FileInputStream — 读文件
 
@@ -128,9 +122,7 @@ try (FileInputStream fis = new FileInputStream("source.jpg");
 }
 ```
 
----
-
-## 二、字符流
+## 五、字符流
 
 字节流读中文可能会乱码（一个中文占多个字节），字符流自动按字符为单位读写，专门处理文本。
 
@@ -165,9 +157,7 @@ try (FileWriter fw = new FileWriter("output.txt")) {
 }
 ```
 
----
-
-## 三、缓冲流（重点）
+## 六、缓冲流（重点）
 
 缓冲流在内部维护一个缓冲区（默认 8KB），减少实际读写磁盘的次数，**性能大幅提升**。
 
@@ -230,9 +220,7 @@ try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream("sour
 }
 ```
 
----
-
-## 四、try-with-resources
+## 七、try-with-resources
 
 流用完必须关闭，否则会占用系统资源。Java 7 引入了 `try-with-resources`，在 try 的括号里声明流对象，**结束时自动关闭**：
 

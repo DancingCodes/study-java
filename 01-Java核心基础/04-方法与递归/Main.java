@@ -1,29 +1,32 @@
-public class Methods {
-    // 题目 1：写一个 max 方法
+public class Main {
+    // 练习 1：写一个 max 方法
     // 接收两个 int 参数，返回较大的那个
+    // TODO: 在这里写代码
     public static int max(int a, int b) {
         return a > b ? a : b;
     }
 
-    // 题目 2：方法重载
+    // 练习 2：方法重载
     // 写三个 multiply 方法：
     // multiply(int, int) → 两个整数的乘积
+    // multiply(double, double) → 两个小数的乘积
+    // multiply(int, int, int) → 三个整数的乘积
+    // TODO: 在这里写代码
     public static int multiply(int a, int b) {
         return a * b;
     }
 
-    // multiply(double, double) → 两个小数的乘积
     public static double multiply(double a, double b) {
         return a * b;
     }
 
-    // multiply(int, int, int) → 三个整数的乘积
     public static int multiply(int a, int b, int c) {
         return a * b * c;
     }
 
-    // 题目 3：可变参数求平均值
+    // 练习 3：可变参数求平均值
     // 写一个 average 方法，接收 double... numbers，返回平均值
+    // TODO: 在这里写代码
     public static double average(double... numbers) {
         double sum = 0;
         for (double number : numbers) {
@@ -32,8 +35,9 @@ public class Methods {
         return sum / numbers.length;
     }
 
-    // 题目 4：递归求阶乘
+    // 练习 4：递归求阶乘
     // 写一个 factorial 方法，用递归计算 n 的阶乘
+    // TODO: 在这里写代码
     public static int factorial(int n) {
         if (n == 1) {
             return 1;
@@ -41,8 +45,9 @@ public class Methods {
         return n * factorial(n - 1);
     }
 
-    // 题目 5：递归求和
+    // 练习 5：递归求和
     // 写一个 sumTo 方法，用递归计算 1 + 2 + ... + n
+    // TODO: 在这里写代码
     public static int sumTo(int n) {
         if (n == 1) {
             return 1;
@@ -51,7 +56,6 @@ public class Methods {
     }
 
     public static void main(String[] args) {
-        // 在这里调用上面的方法并打印结果
         System.out.println(max(1, 2));
         System.out.println(multiply(1, 2));
         System.out.println(multiply(1.0, 2.0));

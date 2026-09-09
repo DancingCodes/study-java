@@ -25,7 +25,7 @@ class MyRunnable implements Runnable {
 class Counter {
     private int count = 0;
 
-    // TODO: 加上 synchronized
+    // TODO: 在这里写代码
     public synchronized void add() {
         count++;
     }
@@ -42,10 +42,9 @@ public class Main {
     // 分别用继承 Thread 和实现 Runnable 两种方式创建线程
     // 各打印 5 次 "线程名 + 数字"
     public static void exercise1() {
-        // TODO: 方式一 —— 继承 Thread
+        // TODO: 在这里写代码
         MyThread t1 = new MyThread();
         t1.start();
-        // TODO: 方式二 —— 实现 Runnable
         Thread t2 = new Thread(new MyRunnable());
         t2.start();
     }

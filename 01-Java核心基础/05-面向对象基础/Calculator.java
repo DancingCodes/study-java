@@ -1,4 +1,4 @@
-// 题目 3：定义一个 Calculator 类
+// 练习 3：定义一个 Calculator 类
 // add(int a, int b) 返回和
 // subtract(int a, int b) 返回差
 // multiply(int a, int b) 返回积

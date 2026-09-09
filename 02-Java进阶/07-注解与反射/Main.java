@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 // - author：作者名，无默认值
 // - version：版本号，默认值 "1.0"
 
-// TODO: 在这里写 @Info 注解
+// TODO: 在这里写代码
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @interface Info {
@@ -24,7 +24,7 @@ import java.lang.reflect.Method;
 // 创建一个 Calculator 类，包含 add()、subtract()、multiply() 三个方法（简单打印即可）
 // 给 add() 和 multiply() 贴上 @MyTest 注解
 
-// TODO: 在这里写 Calculator 类
+// TODO: 在这里写代码
 class Calculator {
     @MyTest
     public static void add(){

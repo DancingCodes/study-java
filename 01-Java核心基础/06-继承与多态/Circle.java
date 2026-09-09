@@ -1,4 +1,4 @@
-// 题目 1：子类 Circle
+// 练习 1：子类 Circle
 // 增加 radius 属性，重写 area() 返回圆的面积（π × r²）
 
 public class Circle extends Shape {

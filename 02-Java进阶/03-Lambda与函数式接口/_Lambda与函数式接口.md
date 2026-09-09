@@ -54,7 +54,7 @@ Calculator add = new Calculator() {
 
 写了 5 行，但真正有用的只有 `return a + b` 这一行。太啰嗦了。
 
-## 二、Lambda 表达式
+## 三、Lambda 表达式
 
 Java 8 引入了 Lambda，用来**简化只有一个抽象方法的接口**的实现：
 
@@ -112,7 +112,7 @@ list.sort((a, b) -> a.compareTo(b));
 Runnable task = () -> System.out.println("执行任务");
 ```
 
-## 三、函数式接口
+## 四、函数式接口
 
 Lambda 只能用于**函数式接口**——只有一个抽象方法的接口。
 
@@ -194,7 +194,7 @@ isPositiveEven.test(-2);  // false
 isPositiveEven.test(3);   // false
 ```
 
-## 四、方法引用
+## 五、方法引用
 
 当 Lambda 表达式只是调用一个已有的方法时，可以进一步简化：
 
@@ -229,7 +229,7 @@ List<String> list = factory.get();
 
 > 方法引用不是必须的，Lambda 能用的地方方法引用也能用，看哪个更清晰就用哪个。
 
-## 五、实际开发中的常见用法
+## 六、实际开发中的常见用法
 
 ```java
 List<String> names = List.of("张三", "李四", "王五", "赵六");
@@ -249,21 +249,21 @@ names.stream()
 
 ---
 
-## 练习题
+## 练习
 
-### 题目 1：Lambda 基础
+### 练习 1：Lambda 基础
 - 定义一个函数式接口 `StringProcessor`，有一个方法 `String process(String input)`
 - 用 Lambda 分别创建三个实现：转大写、转小写、加前缀 "Hello, "
 - 写一个 `execute(StringProcessor sp, String input)` 方法来调用并打印结果
 
-### 题目 2：内置函数式接口
+### 练习 2：内置函数式接口
 - 用 `Predicate<Integer>` 判断一个数是否是偶数
 - 用 `Function<String, Integer>` 把字符串转成它的长度
 - 用 `Consumer<String>` 把字符串加上 ">>>" 前缀后打印
 - 用 `Supplier<Double>` 生成一个随机数
 - 分别调用并打印结果
 
-### 题目 3：方法引用
+### 练习 3：方法引用
 - 创建一个 `List<String>`，添加几个名字
 - 用方法引用 `System.out::println` 遍历打印
 - 用方法引用 `String::compareTo` 排序后再打印

@@ -1,16 +1,11 @@
-// 题目 1：匿名内部类
-// - 用匿名内部类分别创建「加法」和「减法」两个 Calculator 实现
-// - 写一个 printResult(Calculator calc, int a, int b) 方法，打印计算结果
-//
-// 题目 2：枚举
-// - 遍历所有 Weekday，打印中文名
-// - 用 switch 判断某个 Weekday 是工作日还是休息日
-
 public class Main {
+    // 练习 1：匿名内部类
+    // - 用匿名内部类分别创建「加法」和「减法」两个 Calculator 实现
+    // - 写一个 printResult(Calculator calc, int a, int b) 方法，打印计算结果
+    // TODO: 在这里写代码
     public static void printResult(Calculator calc, int a, int b) {
         System.out.println(calc.compute(a, b));
     }
-
 
     public static void main(String[] args) {
         Calculator add = new Calculator() {
@@ -30,8 +25,10 @@ public class Main {
         printResult(add, 2, 1);
         printResult(sub, 2, 1);
 
-
-
+        // 练习 2：枚举
+        // - 遍历所有 Weekday，打印中文名
+        // - 用 switch 判断某个 Weekday 是工作日还是休息日
+        // TODO: 在这里写代码
         for (Weekday day : Weekday.values()) {
             System.out.println(day.getName());
             switch (day) {

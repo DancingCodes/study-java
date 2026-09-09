@@ -1,4 +1,4 @@
-// 题目 1：定义一个 Student 类
+// 练习 1：定义一个 Student 类
 // 属性：name（String）、age（int）、score（double），用 private
 // 写有参构造器和无参构造器
 // 写 getter 和 setter

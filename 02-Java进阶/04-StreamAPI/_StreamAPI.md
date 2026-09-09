@@ -246,22 +246,22 @@ Map<String, Double> scoreMap = students.stream()
 
 ---
 
-## 练习题
+## 练习
 
-### 题目 1：基础操作
+### 练习 1：基础操作
 给定 `List<Integer> nums = List.of(5, 3, 8, 1, 9, 2, 7, 4, 6)`：
 - 过滤出大于 5 的数
 - 排序（升序）
 - 收集成新的 List 并打印
 
-### 题目 2：字符串处理
+### 练习 2：字符串处理
 给定 `List<String> words = List.of("hello", "world", "java", "stream", "hello", "java")`：
 - 去重
 - 转成大写
 - 按字母排序
 - 用逗号拼接成一个字符串并打印
 
-### 题目 3：统计
+### 练习 3：统计
 给定 `List<Integer> scores = List.of(85, 92, 78, 95, 60, 45, 88, 72)`：
 - 打印及格（>= 60）的人数
 - 打印最高分和最低分

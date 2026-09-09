@@ -1,4 +1,4 @@
-// 题目 1：泛型类
+// 练习 1：泛型类
 // 写一个 Result<T> 类，模拟接口返回结果：
 // - 属性：boolean success、String message、T data
 // - 有参构造器

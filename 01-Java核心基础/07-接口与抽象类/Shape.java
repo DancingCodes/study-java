@@ -1,4 +1,4 @@
-// 题目 1：用抽象类改造 Shape
+// 练习 1：用抽象类改造 Shape
 // 把 Shape 改成抽象类，area() 改成抽象方法
 
 public abstract class Shape {

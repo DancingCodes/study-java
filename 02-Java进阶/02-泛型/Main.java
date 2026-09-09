@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 
 public class Main {
-    // 题目 2：泛型方法
+    // 练习 2：泛型方法
     // 写一个泛型方法 <T> T getFirst(List<T> list)
     // - 返回列表的第一个元素
     // - 如果列表为空，返回 null
@@ -24,7 +24,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        // 题目 1：在 Main 中分别创建 Result<String> 和 Result<Integer> 测试
+        // 练习 1：在 Main 中分别创建 Result<String> 和 Result<Integer> 测试
         Result<String> r1 = new Result<>(true, "ok", "1");
         Result<Integer> r2 = new Result<>(true, "ok", 1);
 
@@ -35,7 +35,7 @@ public class Main {
         getFirst(list1);
         getFirst(list2);
 
-        // 题目 3：通配符
+        // 练习 3：通配符
         // 写一个方法 printAll(List<?> list)
         // - 遍历打印列表中所有元素
         // - 分别传入 List<String>、List<Integer>、List<Double> 测试

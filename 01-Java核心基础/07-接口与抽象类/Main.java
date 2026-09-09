@@ -1,9 +1,9 @@
-// 题目 2：接口多态测试
-// - 写一个 bindDraw(Drawable d) 方法，调用 d.draw()
-// - 分别创建 Circle 和 Rectangle，调用 bindDraw 测试
-// - 同时也测试 printArea（和上一课一样）
-
 public class Main {
+    // 练习：接口多态测试
+    // - 写一个 bindDraw(Drawable d) 方法，调用 d.draw()
+    // - 分别创建 Circle 和 Rectangle，调用 bindDraw 测试
+    // - 同时也测试 printArea（和上一课一样）
+    // TODO: 在这里写代码
     public static void printArea(Shape shape) {
         System.out.println(shape.area());
         if (shape instanceof Circle) {

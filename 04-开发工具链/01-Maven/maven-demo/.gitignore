@@ -1,0 +1,11 @@
+# Maven 编译输出
+target/
+
+# IDEA 配置
+.idea/
+*.iml
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd

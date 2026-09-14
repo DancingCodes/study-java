@@ -1,0 +1,37 @@
+### 测试全局异常处理
+
+### 1. 正常查询
+GET http://localhost:8080/products/1
+
+### 2. 查询不存在的商品 — 应返回 {"code":404, "message":"商品不存在"}
+GET http://localhost:8080/products/999
+
+### 3. 路径参数类型错误 — 应返回 {"code":400, "message":"参数类型错误：id"}
+GET http://localhost:8080/products/abc
+
+### 4. 正常创建
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "AirPods Pro", "price": 1899.00, "stock": 200}
+
+### 5. 校验失败：名称为空 — 应返回 {"code":400, "message":"商品名称不能为空"}
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "", "price": 1899.00, "stock": 200}
+
+### 6. 校验失败：价格为负 — 应返回 {"code":400, "message":"价格必须大于0"}
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "测试商品", "price": -100, "stock": 200}
+
+### 7. 校验失败：缺少必填字段 — 应返回 {"code":400, ...}
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "测试商品"}
+
+### 8. 查询全部
+GET http://localhost:8080/products

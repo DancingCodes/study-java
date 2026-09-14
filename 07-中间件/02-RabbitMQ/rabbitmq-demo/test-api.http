@@ -1,0 +1,31 @@
+### 测试 RabbitMQ
+
+### ==================== 练习 1：Direct 模式 ====================
+
+### 1. 发送订单消息（Direct）
+POST http://localhost:8080/order
+Content-Type: application/json
+
+{
+  "orderId": "ORD20240101001",
+  "productName": "Java编程思想",
+  "amount": 108.00
+}
+
+### 2. 再发一条订单消息
+POST http://localhost:8080/order
+Content-Type: application/json
+
+{
+  "orderId": "ORD20240101002",
+  "productName": "Spring Boot实战",
+  "amount": 79.00
+}
+
+### ==================== 练习 2：Fanout 广播 ====================
+
+### 3. 发送广播通知（短信队列和邮件队列都会收到）
+POST http://localhost:8080/order/notify?message=您的订单已发货
+
+### 4. 再发一条广播
+POST http://localhost:8080/order/notify?message=系统将于今晚22点维护

@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  # Elasticsearch 配置
+  elasticsearch:
+    uris: http://localhost:9200
+
+  # MySQL 配置（数据同步练习需要）
+  datasource:
+    url: jdbc:mysql://localhost:3306/study_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# MyBatis Plus
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true

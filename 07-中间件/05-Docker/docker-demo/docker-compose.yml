@@ -1,0 +1,33 @@
+# 练习 2：Docker Compose 一键部署
+#
+# 使用方法：
+#   1. 先在 app 目录下执行 mvn clean package -DskipTests
+#   2. docker-compose up -d
+#   3. 访问 http://localhost:8080/health 查看 MySQL 和 Redis 连接状态
+#   4. docker-compose logs -f app 查看应用日志
+#   5. 结束：docker-compose down
+
+# TODO: 补全这个 docker-compose.yml
+# 要求：
+#   1. 定义 mysql 服务（镜像 mysql:8.0，端口 3306，设置 root 密码和数据库名，数据卷持久化）
+#   2. 定义 redis 服务（镜像 redis:7，端口 6379）
+#   3. 定义 app 服务（使用 Dockerfile 构建，端口 8080，依赖 mysql 和 redis）
+#   4. app 服务通过环境变量指定连接地址：MYSQL_HOST=mysql，REDIS_HOST=redis
+#   5. 三个服务在同一个网络 app-net 中
+#
+# 提示：容器间通信用服务名（mysql、redis），不用 localhost
+
+version: '3.8'
+
+services:
+  # TODO: mysql 服务
+
+  # TODO: redis 服务
+
+  # TODO: app 服务
+
+volumes:
+  mysql-data:
+
+networks:
+  app-net:

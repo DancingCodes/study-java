@@ -1,0 +1,27 @@
+# 练习 3：多阶段构建
+#
+# 对比练习 1 的单阶段 Dockerfile，多阶段构建不需要提前 mvn package，
+# Docker 会在容器内编译，最终镜像只包含 JRE 和 jar，体积更小。
+#
+# 步骤：
+#   1. docker build -f Dockerfile.multistage -t docker-demo:2.0 .
+#   2. docker images 对比 docker-demo:1.0 和 docker-demo:2.0 的大小
+#   3. docker run -d --name docker-demo-v2 -p 8080:8080 docker-demo:2.0
+
+# TODO: 补全这个多阶段 Dockerfile
+#
+# 第一阶段（编译）：
+#   基础镜像：maven:3.9-eclipse-temurin-21 AS builder
+#   工作目录：/build
+#   复制 app/pom.xml 到 .
+#   运行：mvn dependency:go-offline
+#   复制 app/src 到 ./src
+#   运行：mvn clean package -DskipTests
+#
+# 第二阶段（运行）：
+#   基础镜像：eclipse-temurin:21-jre
+#   工作目录：/app
+#   从第一阶段复制：--from=builder /build/target/*.jar app.jar
+#   暴露端口：8080
+#   启动命令：java -jar app.jar
+

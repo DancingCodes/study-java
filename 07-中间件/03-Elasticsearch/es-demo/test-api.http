@@ -1,0 +1,90 @@
+### 测试 Elasticsearch
+
+### ==================== 练习 2：数据同步（先录入数据） ====================
+
+### 1. 新增商品到 ES
+POST http://localhost:8080/search/product
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "华为 Mate60 Pro",
+  "description": "鸿蒙系统旗舰手机，卫星通信",
+  "price": 6999,
+  "stock": 100,
+  "category": "手机"
+}
+
+### 2. 新增第二个商品
+POST http://localhost:8080/search/product
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "小米14 Pro",
+  "description": "骁龙8Gen3旗舰手机",
+  "price": 4999,
+  "stock": 200,
+  "category": "手机"
+}
+
+### 3. 新增第三个商品
+POST http://localhost:8080/search/product
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "ThinkPad X1 Carbon",
+  "description": "联想商务轻薄笔记本",
+  "price": 9999,
+  "stock": 50,
+  "category": "笔记本"
+}
+
+### 4. 新增第四个商品
+POST http://localhost:8080/search/product
+Content-Type: application/json
+
+{
+  "id": 4,
+  "name": "Apple MacBook Pro",
+  "description": "M3芯片专业笔记本",
+  "price": 14999,
+  "stock": 30,
+  "category": "笔记本"
+}
+
+### 5. 新增第五个商品
+POST http://localhost:8080/search/product
+Content-Type: application/json
+
+{
+  "id": 5,
+  "name": "索尼 WH-1000XM5",
+  "description": "降噪蓝牙耳机",
+  "price": 2499,
+  "stock": 300,
+  "category": "耳机"
+}
+
+### ==================== 练习 1：搜索商品 ====================
+
+### 6. 关键词搜索（搜索"华为"）
+GET http://localhost:8080/search/product?keyword=华为
+
+### 7. 按分类过滤
+GET http://localhost:8080/search/product?category=手机
+
+### 8. 按价格范围过滤
+GET http://localhost:8080/search/product?minPrice=3000&maxPrice=7000
+
+### 9. 查询全部
+GET http://localhost:8080/search/product
+
+### ==================== 练习 2：删除 ====================
+
+### 10. 删除商品
+DELETE http://localhost:8080/search/product/5
+
+### 11. 删除后再搜索，确认已删除
+GET http://localhost:8080/search/product?keyword=索尼

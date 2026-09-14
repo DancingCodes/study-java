@@ -28,20 +28,45 @@ Nginx 是一个高性能的 **HTTP 服务器** 和 **反向代理服务器**，�
 
 ## 二、Nginx 安装
 
-### Docker 安装（推荐）
+### Windows 安装
+
+1. 下载：http://nginx.org/en/download.html （选 Stable version 的 Windows 版）
+2. 解压到一个**没有中文、没有空格**的目录，比如 `D:\nginx`
+3. 目录结构：
+
+```
+nginx/
+├── conf/          ← 配置文件目录
+│   └── nginx.conf ← 主配置文件
+├── html/          ← 默认静态文件
+├── logs/          ← 日志
+└── nginx.exe      ← 主程序
+```
+
+4. 启动与管理（在 nginx 目录下打开命令行）：
 
 ```bash
-# 拉取镜像
-docker pull nginx:latest
+# 启动
+nginx.exe
 
-# 启动容器
-docker run -d --name nginx \
-  -p 80:80 \
-  -p 443:443 \
-  nginx:latest
+# 验证：浏览器访问 http://localhost，看到 "Welcome to nginx!" 即成功
 
-# 验证
-curl http://localhost
+# 重新加载配置（修改配置后用这个，不用重启）
+nginx.exe -s reload
+
+# 停止
+nginx.exe -s stop
+
+# 测试配置文件是否正确
+nginx.exe -t
+```
+
+**注意**：Windows 上 Nginx 不会在后台运行，关掉命令行窗口它就停了。可以用 `start nginx` 让它在后台跑。
+
+### Docker 安装（学完 Docker 后可以用这种方式）
+
+```bash
+docker run -d --name nginx -p 80:80 -p 443:443 nginx:latest
 ```
 
 访问 http://localhost 看到 "Welcome to nginx!" 即成功。

@@ -1,0 +1,7 @@
+### 测试配置管理
+
+### 1. 查看应用配置信息
+GET http://localhost:8080/app/info
+
+### 2. 查看当前激活的环境
+GET http://localhost:8080/app/profile

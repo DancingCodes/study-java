@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: config-demo
+  profiles:
+    active: dev
+
+app:
+  name: 商品管理系统
+  version: 1.0.0
+  upload-dir: /data/uploads
+  max-upload-size: 10485760

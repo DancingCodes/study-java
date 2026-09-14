@@ -1,0 +1,9 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://test-server:3306/study_db_test?useSSL=false&serverTimezone=Asia/Shanghai
+    username: test_user
+    password: test_pwd
+    driver-class-name: com.mysql.cj.jdbc.Driver

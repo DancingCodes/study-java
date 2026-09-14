@@ -1,0 +1,4 @@
+### 测试定时任务
+
+### 1. 手动触发任务
+GET http://localhost:8080/task/run

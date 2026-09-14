@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: schedule-demo
+  task:
+    scheduling:
+      pool:
+        size: 3

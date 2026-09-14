@@ -1,0 +1,120 @@
+### 测试 Redis 操作
+
+### ==================== String 操作 ====================
+
+### 1. 设置字符串
+POST http://localhost:8080/redis/string?key=name&value=张三
+
+### 2. 获取字符串
+GET http://localhost:8080/redis/string?key=name
+
+### 3. 设置带过期时间的字符串（300秒）
+POST http://localhost:8080/redis/string/expire?key=code&value=123456&seconds=300
+
+### 4. 查看 TTL
+GET http://localhost:8080/redis/ttl?key=code
+
+### 5. 判断 key 是否存在
+GET http://localhost:8080/redis/exists?key=name
+
+### 6. 删除字符串
+DELETE http://localhost:8080/redis/string?key=name
+
+### ==================== Hash 操作 ====================
+
+### 7. 设置 Hash 字段
+POST http://localhost:8080/redis/hash?key=user:1&field=name&value=张三
+
+### 8. 再设置一个字段
+POST http://localhost:8080/redis/hash?key=user:1&field=age&value=25
+
+### 9. 获取 Hash 单个字段
+GET http://localhost:8080/redis/hash?key=user:1&field=name
+
+### 10. 获取 Hash 全部字段
+GET http://localhost:8080/redis/hash/all?key=user:1
+
+### 11. 删除 Hash 字段
+DELETE http://localhost:8080/redis/hash?key=user:1&field=age
+
+### ==================== List 操作 ====================
+
+### 12. 左侧插入
+POST http://localhost:8080/redis/list/lpush?key=messages&value=消息1
+
+### 13. 左侧再插入一条
+POST http://localhost:8080/redis/list/lpush?key=messages&value=消息2
+
+### 14. 右侧插入
+POST http://localhost:8080/redis/list/rpush?key=messages&value=消息3
+
+### 15. 获取列表全部元素
+GET http://localhost:8080/redis/list?key=messages
+
+### ==================== Set 操作 ====================
+
+### 16. 添加 Set 元素
+POST http://localhost:8080/redis/set?key=tags&value=Java
+
+### 17. 再添加一个
+POST http://localhost:8080/redis/set?key=tags&value=Spring
+
+### 18. 重复添加（不会生效）
+POST http://localhost:8080/redis/set?key=tags&value=Java
+
+### 19. 获取 Set 全部元素
+GET http://localhost:8080/redis/set?key=tags
+
+### ==================== Sorted Set 排行榜 ====================
+
+### 20. 添加排行榜数据
+POST http://localhost:8080/redis/zset?key=ranking&value=张三&score=100
+
+### 21. 添加更多数据
+POST http://localhost:8080/redis/zset?key=ranking&value=李四&score=90
+
+### 22. 再加一个
+POST http://localhost:8080/redis/zset?key=ranking&value=王五&score=110
+
+### 23. 获取排行榜（从高到低）
+GET http://localhost:8080/redis/zset?key=ranking
+
+### ==================== 商品缓存（带 Redis） ====================
+
+### 24. 查询商品（第一次走数据库，控制台有 SQL 日志）
+GET http://localhost:8080/product/1
+
+### 25. 再次查询同一商品（走缓存，控制台无 SQL 日志）
+GET http://localhost:8080/product/1
+
+### 26. 查询全部商品
+GET http://localhost:8080/product
+
+### 27. 新增商品
+POST http://localhost:8080/product
+Content-Type: application/json
+
+{
+  "name": "Redis学习手册",
+  "price": 59.90,
+  "stock": 200
+}
+
+### 28. 更新商品（会删除缓存）
+PUT http://localhost:8080/product/1
+Content-Type: application/json
+
+{
+  "name": "更新后的商品",
+  "price": 199.00,
+  "stock": 50
+}
+
+### 29. 更新后再查询（重新走数据库）
+GET http://localhost:8080/product/1
+
+### 30. 查询不存在的商品（测试缓存穿透防护）
+GET http://localhost:8080/product/999
+
+### 31. 删除商品
+DELETE http://localhost:8080/product/1

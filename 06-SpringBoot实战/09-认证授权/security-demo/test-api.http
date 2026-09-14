@@ -1,0 +1,21 @@
+### 测试认证授权
+
+### 1. 登录（正确密码）— 应返回 token
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{"username": "admin", "password": "123456"}
+
+### 2. 登录（错误密码）— 应返回 401
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{"username": "admin", "password": "wrong"}
+
+### 3. 带 Token 访问受保护接口 — 应返回当前用户信息
+### 注意：把下面的 token 替换成第 1 步返回的 token
+GET http://localhost:8080/users/me
+Authorization: Bearer 把这里替换成登录返回的token
+
+### 4. 不带 Token 访问受保护接口 — 应返回 403
+GET http://localhost:8080/users/me

@@ -1,0 +1,46 @@
+### 测试数据校验
+
+### 1. 正常创建 — 应该成功
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "AirPods Pro", "price": 1899.00, "stock": 200}
+
+### 2. 名称为空 — 应该返回校验错误
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "", "price": 1899.00, "stock": 200}
+
+### 3. 价格为负 — 应该返回校验错误
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "测试商品", "price": -100, "stock": 200}
+
+### 4. 库存为负 — 应该返回校验错误
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "测试商品", "price": 99.00, "stock": -5}
+
+### 5. 缺少必填字段 — 应该返回校验错误
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "测试商品"}
+
+### 6. 名称太短 — 应该返回校验错误
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "A", "price": 99.00, "stock": 10}
+
+### 7. 正常更新 — 应该成功
+PUT http://localhost:8080/products/1
+Content-Type: application/json
+
+{"name": "iPhone 15 Pro", "price": 7999.00, "stock": 50}
+
+### 8. 查询全部
+GET http://localhost:8080/products
